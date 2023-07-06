@@ -1,0 +1,20 @@
+
+.card-img-custom{
+    width: 250px;
+    height: 250px;
+    
+}
+
+.tarjeta, #contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.card-body{
+    display: inline;
+    align-content: center;
+    align-items:start;
+    margin-left: 15px;
+}
+
