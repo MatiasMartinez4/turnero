@@ -62,23 +62,23 @@ const Profesionales = [{
     foto:"https://hips.hearstapps.com/hmg-prod/images/portrait-of-a-happy-young-doctor-in-his-clinic-royalty-free-image-1661432441.jpg?crop=0.66698xw:1xh;center,top&resize=1200:*",
     duracionConsulta: 60, //minutos
     turnos : [
-      
-      {n: 1,
-        fecha: "12/07/23",
-        hora: "09",
-        validacion: false},
-        {n: 2,
-        fecha: "12/07/23",
-        hora: "10",
-        validacion: false},
-        {n: 3,
-        fecha: "12/07/23",
-        hora: "11",
-        validacion: false},
-        {n: 4,
-        fecha: "12/07/23",
-        hora: "12",
-        validacion: false},
+         
+      {
+      fecha: "12/07/23",
+      hora: "09",
+      validacion: false},
+      {
+      fecha: "12/07/23",
+      hora: "10",
+      validacion: false},
+      {
+      fecha: "12/07/23",
+      hora: "11",
+      validacion: false},
+      {
+      fecha: "12/07/23",
+      hora: "12",
+      validacion: false},
     ]
     },
     {
@@ -88,24 +88,24 @@ const Profesionales = [{
     duracionConsulta: 60, //minutos
     foto: "https://we-doctor.com/wp-content/uploads/2019/07/medico-2.jpg",
     turnos : [
-      {n: 1,
-        fecha: "12/07/23",
-        hora: "09",
-        validacion: false},
-        {n: 2,
-        fecha: "12/07/23",
-        hora: "10",
-        validacion: false},
-        {n: 3,
-        fecha: "12/07/23",
-        hora: "11",
-        validacion: false},
-        {n: 4,
-        fecha: "12/07/23",
-        hora: "12",
-        validacion: false},
+         
+      {
+      fecha: "12/07/23",
+      hora: "09",
+      validacion: false},
+      {
+      fecha: "12/07/23",
+      hora: "10",
+      validacion: false},
+      {
+      fecha: "12/07/23",
+      hora: "11",
+      validacion: false},
+      {
+      fecha: "12/07/23",
+      hora: "12",
+      validacion: false},
     ]
-        
     },
     {  
         id:3,
@@ -114,23 +114,23 @@ const Profesionales = [{
         duracionConsulta: 60, //minutos
         foto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ9FaGdmjL-_P-UNqW2Wf7-xGMf0NeJsdatA&usqp=CAU",
         turnos : [
-          
-           {n: 1,
-            fecha: "12/07/23",
-            hora: "09",
-            validacion: false},
-            {n: 2,
-            fecha: "12/07/23",
-            hora: "10",
-            validacion: false},
-            {n: 3,
-            fecha: "12/07/23",
-            hora: "11",
-            validacion: false},
-            {n: 4,
-            fecha: "12/07/23",
-            hora: "12",
-            validacion: false},
+         
+          {
+          fecha: "12/07/23",
+          hora: "09",
+          validacion: false},
+          {
+          fecha: "12/07/23",
+          hora: "10",
+          validacion: false},
+          {
+          fecha: "12/07/23",
+          hora: "11",
+          validacion: false},
+          {
+          fecha: "12/07/23",
+          hora: "12",
+          validacion: false},
         ]
         
     },
@@ -142,19 +142,19 @@ const Profesionales = [{
         duracionConsulta: 60, //minutos
         turnos : [
          
-          {n: 1,
+          {
           fecha: "12/07/23",
           hora: "09",
           validacion: false},
-          {n: 2,
+          {
           fecha: "12/07/23",
           hora: "10",
           validacion: false},
-          {n: 3,
+          {
           fecha: "12/07/23",
           hora: "11",
           validacion: false},
-          {n: 4,
+          {
           fecha: "12/07/23",
           hora: "12",
           validacion: false},
@@ -165,108 +165,44 @@ const Profesionales = [{
 
 let tarjetas = document.getElementById("contenedor");
 let section = document.getElementsByClassName("Profesionales");
-let botones = document.getElementsByClassName("seleccionar");
-const tabla = document.getElementById("turnos")
 
 function cargarTarjetas(Profesionales){
   tarjetas.innerHTML='';
   for(let profesional of Profesionales){
-      tarjetas.innerHTML += `
-          <div class="card col-sm-3 tarjeta">
-              <img class="card-img-top card-img-custom" src=${profesional.foto} alt="Card image cap">
-              <div class="card-body">
-                  <h1 class="card-title">${profesional.nombre}</h1>
-                  <p class="card-text"> ${profesional.especialidad}</p>
-                  <button id=${turnos.id} class="btn btn-primary seleccionar seleccionar">Seleccionar</button>
-              </div>
-              
-          </div>
-      `;
-}
-}
-cargarTarjetas(Profesionales);
-
-function mostrarTurnos(turnos) {
-  // Limpiar tabla de turnos antes de mostrar los nuevos turnos
-  tabla.innerHTML = "";
-
-  // Crear y agregar filas de turnos a la tabla
-  Profesionales.forEach(profesional => {
-
-    const turnosIndividuales = Profesionales.find((profesional) => profesional.id == botones.id);
-      
-    tabla.innerHTML += `
-
-    <table>
-  <thead>
-    <tr>
-      <th></th>Profesional
-      <th>Turno</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>${profesional.nombre}</td>
-      <td>${profesional.turnos}</td>
-    </tr>
-    <tr>
-      <td>Dato 3</td>
-      <td>Dato 4</td>
-    </tr>
-  </tbody>
-</table>
+    tarjetas.innerHTML += `
+      <div class="card col-sm-3 tarjeta">
+        <img class="card-img-top card-img-custom" src=${profesional.foto} alt="Card image cap">
+        <div class="card-body">
+          <h1 class="card-title">${profesional.nombre}</h1>
+          <p class="card-text"> ${profesional.especialidad}</p>
+          <button class="btn btn-primary seleccionar">Seleccionar</button>
+        </div>
+      </div>
     `;
+  }
 
-  });
-}
-
-for (const boton of botones) {
-  addEventListener("click",()=>{
-    mostrarTurnos(turnos)
-  })
-  
-}
-
-
-
-/*
-
-for (const profesional of Profesionales) {
-  const turnos = profesional.turnos.find((turno) => turno.fechaHora);
-  console.table(turnos);
-
-  mostrarTurnos(turnos);
-  
-}
-
-
-for(const boton of botones){
-
-  boton.addEventListener('click',()=>{
-      //console.log('Hiciste click en el producto con id: '+boton.id);
-      const turnosIndividuales = Profesionales.find((profesional) => profesional.id == boton.id);
+  const botones = document.getElementsByClassName("seleccionar");
+  for (const boton of botones) {
+    boton.addEventListener("click", (evento) => {
+      const profesionalId = evento.target.parentNode.parentNode.querySelector(".card-title").textContent;
+      const profesional = Profesionales.find((profesional) => profesional.nombre === profesionalId);
       
-      console.log(profesional)
-      console.log(turnosIndividuales);
-      
-      mostrarTurnos(turnosIndividuales);
-  })
+      if (profesional) {
+        const turnosContainer = document.getElementById("turnosContainer");
+        turnosContainer.innerHTML = "";
+
+        for (const turno of profesional.turnos) {
+          
+          turnosContainer.innerHTML += `
+            <p>Fecha: ${turno.fecha} - Hora: ${turno.hora}</p> <button class="btn btn-secondary">Seleccionar Turno</button>
+          `;
+
+          console.log("turno: " +`${turno.fecha}` + `${turno.hora}` );
+        }
+
+      }
+    });
+  }
 }
 
-
-function mostrarTurnos(turnosIndividuales){
-  tablaTurno.push(turnosIndividuales);
-  console.table(turnosIndividuales);
-  tbody.innerHTML = "";
-  tbody.innerHTML += `
-      <tr>
-          <td>${Profesionales.turnosIndividuales}</td>
-      </tr>
-  `;
-}*/
-
-
-
-
-
-
+cargarTarjetas(Profesionales);
